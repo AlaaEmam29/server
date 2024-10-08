@@ -42,6 +42,7 @@ cors_proxy.createServer({
   redirectSameOrigin: true,
   httpProxyOptions: {
     // Do not add X-Forwarded-For, etc. headers, because Heroku already adds it.
+    secure: true, 
     xfwd: false,
   },
 }).listen(port, host, function() {
