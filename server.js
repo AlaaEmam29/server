@@ -41,7 +41,9 @@ cors_proxy.createServer({
   ],
   redirectSameOrigin: true,
   httpProxyOptions: {
-     xfwd: false,
+    secure: true,
+    followRedirects: true,
+    xfwd: true, // Passes original request information
   },
 }).listen(port, host, function() {
   console.log('Running CORS Anywhere on ' + host + ':' + port);
