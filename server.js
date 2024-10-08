@@ -41,9 +41,7 @@ cors_proxy.createServer({
   ],
   redirectSameOrigin: true,
   httpProxyOptions: {
-    // Do not add X-Forwarded-For, etc. headers, because Heroku already adds it.
-    secure: true, 
-    xfwd: false,
+     xfwd: false,
   },
 }).listen(port, host, function() {
   console.log('Running CORS Anywhere on ' + host + ':' + port);
